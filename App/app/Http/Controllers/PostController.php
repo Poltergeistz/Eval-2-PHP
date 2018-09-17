@@ -18,9 +18,6 @@ class PostController extends Controller
     public function index()
     {
         
-        // $posts = DB::table('posts')
-        // ->orderBy('id', 'desc')
-        // ->get();
         $tags = \App\Tag::pluck('name','id');
 
         $posts = Post::with('tags')->orderBy('id', 'desc')->get();
@@ -72,7 +69,7 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->content = $request->content;
         $post->author = Auth::user()->name;
-        $post->image = 'https://picsum.photos/200/300/?random';
+        $post->image = str_replace('?','&#63;', $request->image);
         $post->user_id = Auth::user()->id;
 
         $post->save();
@@ -127,6 +124,7 @@ class PostController extends Controller
 
         $post->update([
             'title' => $request->title,
+            'image' => str_replace('?','&#63;', $request->image),
             'content' => $request->content
         ]);
 
