@@ -47,7 +47,7 @@
   <div class="card-deck">
   @foreach ($posts as $post)
   <div class="card mb-5">
-    <img class="card-img-top" src="" alt="Card image cap">
+    <img class="card-img-top" src="{{$post->image}}" alt="Card image cap">
     <div class="card-body">
     <h5 class="card-title">{{ $post->title }}</h5>
      @foreach($post->tags as $tag)
