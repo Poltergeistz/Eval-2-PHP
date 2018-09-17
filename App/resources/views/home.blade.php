@@ -26,8 +26,8 @@
                     <!-- lvl bar end  -->
                     <!-- If the xp is 100 show the buttons for leveling up or exchange for virtual money -->
                     <div class="dropdown-divider"></div>
-                    <a href="/" class="btn btn-warning" role="button">Level UP !</a>
-                    <a href="/" class="btn btn-success" role="button">BRIQUES !</a>
+                    <a href="/reward" name="xp" id="xp" class="btn btn-warning" role="button">Level UP !</a>
+                    <a href="/reward" name="briques" id="briques" class="btn btn-success" role="button">BRIQUES !</a>
                     
                 </div>
             </div>
