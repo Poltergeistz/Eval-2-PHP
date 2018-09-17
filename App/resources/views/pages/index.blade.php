@@ -58,17 +58,17 @@
     <p class="card-text">{{ $post->content }}</p>
   </div>
   <div class="card-footer">
-  <small class="text-muted">Posted by {{ $post->author }} at {{ $post->created_at}}</small>
+  <small class="text-muted">Posté par {{ $post->author }} le {{ $post->created_at}}</small>
     @if ($post->updated_at !=  $post->created_at )
-    <small class="text-muted">Updated at {{ $post->updated_at}}</small>
+    <small class="text-muted">Modifié le {{ $post->updated_at}}</small>
     @endif
     @auth
     @if ($post->author ==  Auth::user()->name )
-    <a href="/post/delete/{{$post->id}}" class="btn btn-danger" role="button">Delete</a>
-    <a href="/post/update/{{$post->id}}" class="btn btn-primary" role="button">Update</a>
+    <a href="/post/delete/{{$post->id}}" class="btn btn-danger" role="button">Supprimer</a>
+    <a href="/post/update/{{$post->id}}" class="btn btn-primary" role="button">Mettre à jour</a>
     @endif
     @endauth
-    <a href="/post/show/{{$post->id}}" class="btn btn-success" role="button">Show</a>
+    <a href="/post/show/{{$post->id}}" class="btn btn-success" role="button">Ça m'interesse !</a>
   </div>
 </div>
 @endforeach
