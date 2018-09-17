@@ -46,3 +46,6 @@ Route::get('/post/show/{id}', 'PostController@show')
 Route::post('/comment/create/{id}', 
 	[ 'as'=>'comment','uses'=>'CommentController@store'])
 ->middleware('auth');
+
+// Route reward pour échanger de l'xp contre une brique ou un niveau
+//Route::post('/reward', ['as' => 'reward', 'uses' => ])->middleware('auth');
